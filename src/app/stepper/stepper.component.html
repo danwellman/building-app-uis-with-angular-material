@@ -1,0 +1,55 @@
+<mat-card>
+  <mat-horizontal-stepper>
+    <mat-step editable="false">
+      <ng-template matStepLabel>
+        Step 1<br />with a <em>rich</em> label
+      </ng-template>
+      This is the first step
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step label="Step 2" editable="false">
+      This is the second step
+      <div>
+        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperPrevious>Previous</button>
+      </div>
+    </mat-step>
+    <mat-step label="Step 3" editable="false">
+      This is the third step
+      <div>
+        <button mat-button matStepperPrevious>Previous</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</mat-card>
+
+<mat-card>
+  <form [formGroup]="user" (ngSubmit)="submitForm()">
+    <mat-horizontal-stepper formArrayName="userDetails" linear>
+      <mat-step formGroupName="0" label="Step 1" [stepControl]="userDetails.get([0])">
+        <h2>Personal details</h2>
+        <mat-form-field>
+          <input matInput formControlName="name" placeholder="Name" />
+        </mat-form-field><br />
+        <mat-form-field>
+          <input matInput formControlName="email" placeholder="Email" />
+        </mat-form-field><br />
+        <button mat-button matStepperNext type="button">Next</button>
+      </mat-step>
+      <mat-step formGroupName="1" label="Step 2" [stepControl]="userDetails.get([1])" optional="true">
+        <h2>Options</h2>
+        <mat-checkbox formControlName="opt1">Option 1</mat-checkbox><br />
+        <mat-checkbox formControlName="opt2">Option 2</mat-checkbox><br />
+        <button mat-button matStepperPrevious type="button">Back</button>
+        <button mat-button matStepperNext type="button">Next</button>
+      </mat-step>
+      <mat-step label="Step 3">
+        <h2>Submit</h2>
+        <button mat-button matStepperPrevious type="button">Back</button>
+        <button mat-button>Register</button>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </form>
+</mat-card>

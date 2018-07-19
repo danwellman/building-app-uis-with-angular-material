@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Dialog title!</h1>
+<mat-dialog-content>
+  <p>
+    content works!
+  </p>
+  <p>The injected data is: {{ data.custom }}</p>
+  <input mat-input placeholder="Send back a message" #message />
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="message.value">Great!</button>
+</mat-dialog-actions>

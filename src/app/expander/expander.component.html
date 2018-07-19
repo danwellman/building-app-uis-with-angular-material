@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-expansion-panel expanded="true" hideToggle="true" (opened)="handleOpened()">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Expansion Panel 1</mat-panel-title>
+      <mat-panel-description>Panel 1 description</mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>Content for expansion panel 1</p>
+    <mat-action-row>
+      <button mat-button>Something!</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-card>
+
+<mat-card>
+  <mat-accordion displayMode="flat">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Accordion Expansion Panel 1</mat-panel-title>
+        <mat-panel-description>Accordion Panel 1 description</mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Content for Accordion expansion panel 1</p>
+      <mat-action-row>
+        <button mat-button>Something!</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Accordion Expansion Panel 2</mat-panel-title>
+        <mat-panel-description>Accordion Panel 2 description</mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Content for Accordion expansion panel 2</p>
+      <mat-action-row>
+        <button mat-button>Something!</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>

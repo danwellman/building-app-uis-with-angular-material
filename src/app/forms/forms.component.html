@@ -1,0 +1,56 @@
+<mat-card>
+  <form #nameForm="ngForm">
+    <mat-form-field hintLabel="This is the hint">
+      <mat-label>A Mat Label</mat-label>
+      <input matInput placeholder="name" required name="name" [(ngModel)]="nameForm.name" />
+      <mat-hint align="end">Second hint</mat-hint>
+      <span matPrefix>&#9993;</span>
+      <span matSuffix><i>@somedomain.com</i></span>
+      <mat-error *ngIf="nameForm.invalid">This field is required</mat-error>
+    </mat-form-field>
+
+    <br /><mat-form-field appearance="standard">
+      <mat-label>Standard input</mat-label>
+      <input matInput placeholder="Age" />
+    </mat-form-field>
+
+    <br /><mat-form-field appearance="fill">
+      <mat-label>Fill input</mat-label>
+      <input matInput placeholder="Age" />
+    </mat-form-field>
+
+    <br /><mat-form-field appearance="outline">
+      <mat-label>Outline input</mat-label>
+      <input matInput placeholder="Age" />
+    </mat-form-field>
+  </form>
+</mat-card>
+
+<mat-card>
+  <mat-form-field>
+    <input matInput [matDatepicker]="simplePicker" placeholder="Choose a date" disabled />
+    <mat-datepicker #simplePicker startView="multi-year" disabled="false" touchUi="true"></mat-datepicker>
+    <mat-datepicker-toggle matSuffix [for]="simplePicker" disabled="false"></mat-datepicker-toggle>
+  </mat-form-field>
+</mat-card>
+
+<mat-card>
+  <mat-slider min="0" max="50" step="5" tickInterval="1" thumbLabel (change)="sliderChange($event)"></mat-slider>
+</mat-card>
+
+<mat-card>
+  <mat-slide-toggle checked="true" labelPosition="before" (change)="slideToggle($event)">Sound effects</mat-slide-toggle>
+</mat-card>
+
+<mat-card>
+  <mat-form-field>
+    <mat-select placeholder="Choose an option" multiple #select (selectionChange)="handleSelect($event)">
+      <mat-option *ngFor="let option of options" [value]="option.value" [disabled]="option.disabled">{{ option.viewValue }}</mat-option>
+      <mat-optgroup label="Specials">
+        <mat-option value="4">Special 1</mat-option>
+        <mat-option value="5">Special 2</mat-option>
+      </mat-optgroup>
+      <mat-select-trigger>{{ select.selected.length }}</mat-select-trigger>
+    </mat-select>
+  </mat-form-field>
+</mat-card>

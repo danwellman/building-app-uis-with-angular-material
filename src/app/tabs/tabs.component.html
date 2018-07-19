@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-tab-group selectedIndex="1" headerPosition="below" (selectedTabChange)="handleTabChange($event)">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <em>Tab 1</em>
+      </ng-template>
+      <h1>This is the content for Tab 1</h1>
+      <p>Some example content...</p>
+    </mat-tab>
+    <mat-tab label="Tab 2">
+
+      <h1>This is the content for Tab 2</h1>
+      <ng-template matTabContent>
+        <app-table></app-table>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Tab 3">
+      <h1>This is the content for Tab 3</h1>
+      <p>Some example content...</p>
+    </mat-tab>
+    <mat-tab label="Tab 4">
+      <h1>This is the content for Tab 4</h1>
+      <p>Some example content...</p>
+    </mat-tab>
+    <mat-tab label="Tab 5">
+      <h1>This is the content for Tab 5</h1>
+      <p>Some example content...</p>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>

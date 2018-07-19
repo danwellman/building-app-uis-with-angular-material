@@ -1,0 +1,43 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+
+  mat-card-footer {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 24px;
+    left: 0;
+    right: 0;
+  }
+
+  mat-card-actions {
+    width: 100%;
+    margin: 0;
+    padding-bottom: 0;
+  }
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+app-table {
+  position: absolute;
+  left: 9px;
+  right: 9px;
+  top: 0;
+}
